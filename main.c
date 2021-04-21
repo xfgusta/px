@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <getopt.h>
 #include <stdbool.h>
+
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/cursorfont.h>
@@ -10,17 +11,18 @@
 int main(int argc, char **argv) {
     int c;
     bool hex = false, coordinate = false, view = false;
-    while((c = getopt(argc, argv, "hxvct:")) != -1) {
+    while((c = getopt(argc, argv, "hxvcat:")) != -1) {
         switch(c) {
             case 'h':
-                printf("Usage: px [-h] [-xvc] [-t seconds]\n\n"
+                printf("Usage: px [-h] [-xvca] [-t seconds]\n\n"
                        "Mouse left-click to pick up the color\n\n"
                        "Options:\n"
                        "  -h        display this message and exit\n"
                        "  -x        print rgb in hexadecimal\n"
                        "  -v        show color\n"
                        "  -c        print coordinate\n"
-                       "  -t <n>    sleep for n seconds\n");
+                       "  -a        run px with the -xvc options"
+                       "  -t <n>    sleep for n seconds\n\n");
                 return 0;
             case 'x':
                 hex = true;
@@ -30,6 +32,9 @@ int main(int argc, char **argv) {
                 break;
             case 'c':
                 coordinate = true;
+                break;
+            case 'a':
+                hex = true, view = true, coordinate = true;
                 break;
             case 't':
                 sleep(atoi(optarg));
