@@ -26,6 +26,14 @@ $ make
 # make uninstall
 ```
 
+## Example
+
+```
+$ px -a
+```
+
+To see all available options for px, run: `px -h`
+
 ## License
 
 The MIT License (MIT)
