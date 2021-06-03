@@ -5,7 +5,7 @@ LDFLAGS = -lX11
 SRC = main.c
 
 ${PROG}: ${SRC}
-	${CC} ${CFLAGS} ${LDFLAGS} ${SRC} -o ${PROG}
+	${CC} ${CFLAGS} ${SRC} ${LDFLAGS} -o ${PROG}
 
 install:
 	mkdir -p $(DESTDIR)/usr/bin
