@@ -1,41 +1,37 @@
 # px
 
-Simple X color picker. Mouse left-click to pick up the color.
+Simple X color picker
 
-## Build
+## Installation
 
-Dependencies:
+#### Requirements
 
 + make
-+ gcc
++ gcc (and a POSIX environment)
 + Xlib
 
-```
-$ make
-```
-
-## Install
+Build and install with:
 
 ```
-# make install
+git clone https://github.com/xfgusta/px.git
+cd px
+make
 ```
 
-## Uninstall
+And then `make install` as root.
 
-```
-# make uninstall
-```
+To uninstall, run `make uninstall` as root as well.
 
 ## Example
 
 ```
-$ px -a
+px -a
 ```
 
-To see all available options for px, run: `px -h`
+To see all available options for px, run `px -h`.
 
 ## License
 
 The MIT License (MIT)
 
-px Copyright (c) 2021 Gustavo Costa
+Copyright (c) 2021 Gustavo Costa
